@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "제목2",
+      "author": "작가1수정"
+    },
+    {
+      "id": 2,
+      "title": "제목2",
+      "author": "작가2"
+    },
+    {
+      "id": 5,
+      "title": "지윤",
+      "author": "연우"
+    },
+    {
+      "id": 6,
+      "title": "json 연동..",
+      "author": "행복하다.."
+    },
+    {
+      "id": 9,
+      "title": "우리에게도..",
+      "author": "빛이... 다가왔다!"
+    },
+    {
+      "id": 10,
+      "title": "눈물이....",
+      "author": "차올라요...."
+    }
+  ],
+  "users": [],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

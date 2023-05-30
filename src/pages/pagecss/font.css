@@ -1,0 +1,16 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+#intro {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFF8D2;
+    margin-top: 40px;
+}
+
+#joy {
+    color: #626262;
+}
