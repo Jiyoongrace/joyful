@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './pagecss/main.css';
 import { Link } from 'react-router-dom';
@@ -10,11 +11,17 @@ const CardPage = () => {
   const [subjects, setSubjects] = useState([]);
   const [form, setForm] = useState({ userId: 'all', subject: 'all' });
   const [ratio, setRatio] = useState(0);
+  const navigate = useNavigate();
   const [tutorUsernames, setTutorUsernames] = useState([]);
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsNavBarOpen(!isNavBarOpen);
+  };
+
+  const handleButtonClick = () => {
+    const url = `/feedbackpage?userId=${form.userId}&subject=${form.subject}`;
+    navigate(url);
   };
 
   useEffect(() => {
@@ -197,11 +204,13 @@ const CardPage = () => {
                     >
                       수업 완료
                     </button>
+                    
                   </div>
                 </div>
               );
             })}
           </div>
+          <button onClick={handleButtonClick}>feedback</button>
         </div>
       </div>
     </div>
