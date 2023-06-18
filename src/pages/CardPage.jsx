@@ -8,9 +8,14 @@ import JOY2 from './JOY2.png';
 const CardPage = () => {
   const [posts, setPosts] = useState([]);
   const [subjects, setSubjects] = useState([]);
-  const [form, setForm] = useState({ student: 'all', subject: 'all' });
+  const [form, setForm] = useState({ userId: 'all', subject: 'all' });
   const [ratio, setRatio] = useState(0);
   const [tutorUsernames, setTutorUsernames] = useState([]);
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   useEffect(() => {
     axios.get('http://localhost:3001/subjects').then(({ data }) => {
@@ -25,14 +30,14 @@ const CardPage = () => {
   }, []);
 
   useEffect(() => {
-    const { student, subject } = form;
+    const { userId, subject } = form;
     let url = 'http://localhost:3001/lessons';
 
-    if (student !== 'all') {
-      url += `?userId=${student}`;
+    if (userId !== 'all') {
+      url += `?userId=${userId}`;
     }
     if (subject !== 'all') {
-      url += student !== 'all' ? `&subject=${subject}` : `?subject=${subject}`;
+      url += userId !== 'all' ? `&subject=${subject}` : `?subject=${subject}`;
     }
 
     axios.get(url).then(({ data }) => {
@@ -42,7 +47,7 @@ const CardPage = () => {
     });
 
     const selectedSubject = subjects.find(
-      (subj) => subj.userId === student && subj.subject === subject
+      (subj) => subj.userId === userId && subj.subject === subject
     );
     if (selectedSubject) {
       const calculatedRatio = ((selectedSubject.current / selectedSubject.pages) * 100).toFixed(2);
@@ -55,7 +60,7 @@ const CardPage = () => {
   React.useEffect(() => {
     axios.get('http://localhost:3001/userone').then(({ data }) => {
       const filteredUsernames = data
-        .filter((user) => user.tutorId === 'beulbeul') // Adjust the condition based on your data structure
+        .filter((user) => user.tutorId === 'kariel1103') // Adjust the condition based on your data structure
         .map((user) => user.username);
       setTutorUsernames(filteredUsernames);
     });
@@ -77,8 +82,8 @@ const CardPage = () => {
         </div>
           <div id="aa">
             <select
-              value={form.student}
-              onChange={(e) => setForm({ ...form, student: e.target.value })}
+              value={form.userId}
+              onChange={(e) => setForm({ ...form, userId: e.target.value })}
             >
               <option value="all">전체학생</option>
               {tutorUsernames.map((username) => (
@@ -102,7 +107,7 @@ const CardPage = () => {
               >
                 <option value="all">전체</option>
                 {subjects
-                  .filter((subject) => subject.userId === form.student)
+                  .filter((subject) => subject.userId === form.userId)
                   .map((subject) => (
                     <option key={subject.id} value={subject.subject}>
                       {subject.subject}
@@ -175,7 +180,7 @@ const CardPage = () => {
                     </div>
                     <br></br>
                     <br></br>
-                    <Link to={`/classpage/${post.id}`}>
+                    <Link to={`/classpage/${post.id}?student=${form.userId}`}>
                       <button id="zz">일지 수정</button>
                     </Link>
                     &nbsp;&nbsp;

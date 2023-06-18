@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -6,20 +6,38 @@ import './pagecss/main.css';
 import JOY2 from './JOY2.png';
 import './pagecss/clcl.css';
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 
 const ClassPage = () => {
   const { id } = useParams();
-  const { userId } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const selectedStudent = searchParams.get('student');
+  const [studentnames, setStudentnames] = useState([]);
   const [post, setPost] = React.useState(null);
   const [update, setUpdate] = React.useState({ subject: '', study: '', hw: '', current: '', grade: '', completed: '' });
   const { subject, study, hw, current, grade, completed } = update;
   const [subjects, setSubjects] = React.useState([]);
-
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsNavBarOpen(!isNavBarOpen);
   };
+
+  useEffect(() => {
+    const fetchStudentnames = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/subjects');
+        const filteredStudentnames = response.data
+          .filter((user) => user.userId === selectedStudent)
+          .map((user) => user.subject);
+        setStudentnames(filteredStudentnames);
+      } catch(error) {
+        console.error('가져오기 실패', error);
+      }
+    };
+    fetchStudentnames();
+  }, [selectedStudent]);
 
   React.useEffect(() => {
     axios
@@ -107,14 +125,14 @@ const ClassPage = () => {
                 
                   <label htmlFor="subject">과목 &nbsp;&nbsp;</label>
                   <select
-                    id="subject"
-                    
+                    id="subject"                    
                     value={subject}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, subject: e.target.value }))}
                   >
-                    {subjects.map((subj) => (
+                    <option value="전체과목">과목선택</option>
+                    {studentnames.map((subj) => (
                       <option key={subj.id} value={subj.subject}>
-                        {subj.subject}
+                        {subj}
                       </option>
                     ))}
                   </select>

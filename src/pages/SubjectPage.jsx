@@ -1,4 +1,4 @@
-import React, { useState }, { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -11,6 +11,12 @@ const SubjectPage = () => {
   const [update, setUpdate] = React.useState({ id: '', userId: '', subject: '', pages: '' });
   const { id, userId, subject, pages } = update;
   const [open, setOpen] = React.useState(false);
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+  const [tutorUsernames, setTutorUsernames] = useState([]);
+  
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   React.useEffect(() => {
     // read
@@ -22,7 +28,7 @@ const SubjectPage = () => {
   React.useEffect(() => {
     axios.get('http://localhost:3001/userone').then(({ data }) => {
       const filteredUsernames = data
-        .filter((user) => user.tutorId == 'beulbeul') // Adjust the condition based on your data structure
+        .filter((user) => user.tutorId == 'kariel1103') // Adjust the condition based on your data structure
         .map((user) => user.username);
       setTutorUsernames(filteredUsernames);
     });

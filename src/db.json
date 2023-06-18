@@ -2,78 +2,85 @@
   "lessons": [
     {
       "id": 1,
-      "userId": "123456",
-      "date": "5월 16일",
-      "subject": "공통수학(상)",
-      "num": 1,
-      "study": "이차부등식이 항상 성립할 조건",
-      "hw": "쎈 110~127 page",
-      "current": 300,
+      "userId": "강숙명",
+      "num": "1",
+      "date": "6월 18일",
+      "subject": "고등수학(상)",
+      "study": "원의 방정식",
+      "hw": "쎈 ~100",
+      "current": 200,
+      "grade": 10,
+      "completed": 10
+    },
+    {
+      "id": 2,
+      "userId": "강숙명",
+      "num": "2",
+      "date": "6월 21일",
+      "subject": "미적분2",
+      "study": "미분하기",
+      "hw": "쎈 ~50",
+      "current": 49,
+      "grade": 10,
+      "completed": 10
+    },
+    {
+      "id": 3,
+      "userId": "하눈송",
+      "num": "1",
+      "date": "6월 23일",
+      "subject": "미적분1",
+      "study": "등차수열",
+      "hw": "쎈 ~70",
+      "current": 75,
       "grade": 5,
       "completed": 5
     },
     {
-      "id": 2,
-      "userId": "123456",
-      "date": "5월 18일",
-      "subject": "공통수학(상)",
-      "num": 2,
-      "study": "직선의 방정식 일반형과 표준형",
-      "hw": "쎈 130~160 page"
-    },
-    {
-      "id": 3,
-      "userId": "123456",
-      "date": "5월 23일",
-      "subject": "공통수학(상)",
-      "num": 3,
-      "study": "원의 방정식",
-      "hw": "쎈 165~175 page",
-      "grade": 2,
-      "completed": 2,
-      "current": 300
-    },
-    {
       "id": 4,
-      "userId": "123456",
-      "date": "5월 23일",
-      "subject": "공통수학(하)",
-      "num": 4,
-      "study": "집합의 뜻과 분류",
-      "hw": "쎈 10~29 page",
-      "grade": 2,
-      "completed": 2,
-      "current": 48
-    },
-    {
-      "id": 5,
-      "userId": "123456",
-      "date": "5월 30일",
-      "subject": "공통수학(하)",
-      "num": 5,
-      "study": "진부분집합과 부분집합의 성질",
-      "hw": "쎈 33~43 page"
-    },
-    {
-      "id": 6,
-      "num": "6",
-      "date": "6월 1일",
-      "subject": "공통수학(하)",
-      "subjectId": 2,
-      "study": "명제의 역, 이, 대우, 삼단논법",
-      "hw": "쎈 45~55 page",
-      "current": 0,
-      "grade": 2,
+      "userId": "배눈송",
+      "num": "1",
+      "date": "6월 23일",
+      "subject": "확률과 통계",
+      "study": "조건부확률",
+      "hw": "100",
+      "current": 100,
+      "grade": 10,
       "completed": 5
     },
     {
+      "id": 5,
+      "userId": "배눈송",
+      "num": "2",
+      "date": "6월 26일"
+    },
+    {
+      "id": 6,
+      "userId": "하눈송",
+      "num": "2",
+      "date": "6월 27일"
+    },
+    {
       "id": 7,
-      "num": "7",
-      "date": "6월 6일",
-      "subject": "공통수학(하)",
-      "study": "qqq",
-      "hw": "ssqq",
-      "current": 36,
+      "userId": "강숙명",
+      "num": "3",
+      "date": "6월 29일",
+      "subject": "미적분2",
+      "study": "ㅇㅇ",
+      "hw": "ㅇㅇㅇ",
+      "current": 190,
+      "grade": 10,
+      "completed": 5
+    },
+    {
+      "id": 8,
+      "userId": "하눈송",
+      "num": "3",
+      "date": "6월 29일",
+      "subject": "미적분1",
+      "study": "ㅇㅇ",
+      "hw": "ㅇㅇㅇㅇ",
+      "current": 200,
       "grade": 2,
       "completed": 2
     }
@@ -174,26 +181,68 @@
       "tutorId": "beulbeul",
       "parents": "00",
       "id": 14
+    },
+    {
+      "username": "강눈송",
+      "userId": "kariel1103",
+      "userPw": "kitty",
+      "tutorId": "",
+      "parents": "",
+      "id": 15
+    },
+    {
+      "username": "강숙명",
+      "userId": "kang1102",
+      "userPw": "kitty",
+      "tutorId": "kariel1103",
+      "parents": "01000000000",
+      "id": 16
+    },
+    {
+      "username": "하눈송",
+      "userId": "haha",
+      "userPw": "kitty",
+      "tutorId": "kariel1103",
+      "parents": "01099992222",
+      "id": 17
+    },
+    {
+      "username": "배눈송",
+      "userId": "baebae",
+      "userPw": "kitty",
+      "tutorId": "kariel1103",
+      "parents": "01088882222",
+      "id": 18
     }
   ],
   "subjects": [
     {
       "id": 1,
-      "subject": "공통수학(상)",
-      "pages": 300,
-      "current": 300
+      "userId": "강숙명",
+      "subject": "고등수학(상)",
+      "pages": 400,
+      "current": 200
     },
     {
       "id": 2,
-      "subject": "공통수학(하)",
-      "pages": 180,
-      "current": 36
+      "userId": "강숙명",
+      "subject": "미적분2",
+      "pages": 500,
+      "current": 190
     },
     {
       "id": 3,
+      "userId": "하눈송",
       "subject": "미적분1",
+      "pages": 500,
+      "current": 200
+    },
+    {
+      "id": 4,
+      "userId": "배눈송",
+      "subject": "확률과 통계",
       "pages": 300,
-      "current": 22
+      "current": 100
     }
   ],
   "profile": {

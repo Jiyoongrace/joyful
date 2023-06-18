@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
 import './pagecss/template.css';
@@ -21,19 +21,23 @@ const CalendarPage = () => {
     setIsNavBarOpen(!isNavBarOpen);
   };
 
-  React.useEffect(() => {
-    // read
-    axios({ url: 'http://localhost:3001/lessons', method: 'GET' }).then(({ data }) => setPosts(data));
-  }, []);
-
-  
-  React.useEffect(() => {
-    axios.get('http://localhost:3001/userone').then(({ data }) => {
-      const filteredUsernames = data
-        .filter((user) => user.tutorId == 'beulbeul') // Adjust the condition based on your data structure
-        .map((user) => user.username);
-      setTutorUsernames(filteredUsernames);
-    });
+  useEffect(() => {
+    // Fetch data from http://localhost:3001/lessons
+    axios
+      .get('http://localhost:3001/lessons')
+      .then(({ data }) => setPosts(data))
+      .catch((error) => console.error('Error fetching lessons:', error));
+    
+    // Fetch data from http://localhost:3001/userone
+    axios
+      .get('http://localhost:3001/userone')
+      .then(({ data }) => {
+        const filteredUsernames = data
+          .filter((user) => user.tutorId === 'kariel1103')
+          .map((user) => user.username);
+        setTutorUsernames(filteredUsernames);
+      })
+      .catch((error) => console.error('Error fetching userone:', error));
   }, []);
 
   const handleDateChange = (selectedDate) => {
@@ -45,17 +49,49 @@ const CalendarPage = () => {
     setUpdate((prev) => ({ ...prev, date: formattedDate }));
   };
 
+  const getTileClassName = ({ date }) => {
+    const formattedDate = `${date.getMonth() + 1}월 ${date.getDate()}일`;
+    const userIds = posts
+      .filter((post) => post.date === formattedDate)
+      .map((post) => post.userId);
+  
+    if (userIds.length > 1) {
+      const colors = ['blue', 'green', 'red', 'orange', 'purple']; // 색상 목록
+      const colorIndex = userIds.reduce((index, userId) => {
+        // userId를 기반으로 색상을 매핑
+        const charCodeSum = Array.from(userId).reduce(
+          (sum, char) => sum + char.charCodeAt(),
+          0
+        );
+        return index + charCodeSum;
+      }, 0);
+      const color = colors[colorIndex % colors.length]; // 색상 선택
+      return `react-calendar__tile--hasMultiple react-calendar__tile--${color}`;
+    } else if (userIds.length === 1) {
+      return 'react-calendar__tile--hasActive';
+    } else {
+      return '';
+    }
+  };
+  
+
   return (
     <div>
       <div id="template">
         <div id="back2">
-        <div>
-          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
-        </div>
-          <br></br><br></br>
+          <div>
+            <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+          </div>
+          <br />
+          <br />
           <div>김눈송 선생님의 월간 과외 캘린더</div>
-        <div style={{ padding: 20 }}>
-            <Calendar value={new Date()} onChange={handleDateChange} locale="en-US" />
+          <div style={{ padding: 20 }}>
+            <Calendar
+              value={new Date()}
+              onChange={handleDateChange}
+              locale="en-US"
+              tileClassName={getTileClassName}
+            />
           </div>
           <div id="fff">
             <span id="sss">+</span>&nbsp;
@@ -71,7 +107,7 @@ const CalendarPage = () => {
                 </option>
               ))}
             </select>
-          </div>       
+          </div>
           <div id="ggg">학생 수업 추가</div>
           <div id="contt">
             <input
@@ -111,7 +147,9 @@ const CalendarPage = () => {
                       url: 'http://localhost:3001/lessons',
                       method: 'POST',
                       data: form,
-                    }).then(({ data }) => setPosts((prev) => [...prev, data]));
+                    })
+                      .then(({ data }) => setPosts((prev) => [...prev, data]))
+                      .catch((error) => console.error('Error creating lesson:', error));
                   }
                   // update
                   else {
@@ -119,11 +157,11 @@ const CalendarPage = () => {
                       url: `http://localhost:3001/lessons/${id}`,
                       method: 'PUT',
                       data: form,
-                    }).then(({ data }) =>
-                      setPosts((prev) =>
-                        prev.map((post) => (post.id === id ? data : post))
+                    })
+                      .then(({ data }) =>
+                        setPosts((prev) => prev.map((post) => (post.id === id ? data : post)))
                       )
-                    );
+                      .catch((error) => console.error('Error updating lesson:', error));
 
                     setUpdate((prev) => ({
                       ...prev,
