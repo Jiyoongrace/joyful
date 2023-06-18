@@ -64,7 +64,7 @@ const SubjectPage = () => {
             
           }}
         >
-          {open ? '수정 완료' : '완료'}
+          {open ? '수정완료' : '완료'}
         </button></Link>
       </div>
       </div>
