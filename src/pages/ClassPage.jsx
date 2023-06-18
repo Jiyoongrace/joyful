@@ -18,6 +18,7 @@ const ClassPage = () => {
   const [update, setUpdate] = React.useState({ subject: '', study: '', hw: '', current: '', grade: '', completed: '' });
   const { subject, study, hw, current, grade, completed } = update;
   const [subjects, setSubjects] = React.useState([]);
+  
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   const toggleNavBar = () => {
