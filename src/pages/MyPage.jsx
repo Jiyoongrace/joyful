@@ -11,6 +11,7 @@ const MyPage = () => {
   const userId = searchParams.get('userId');
   const username = searchParams.get('username');
   const [tutorUsernames, setTutorUsernames] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
@@ -42,38 +43,79 @@ const MyPage = () => {
     window.location.href = '/mainpage';
   };
 
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setSelectedImage(e.target.result);
+    };
+    reader.readAsDataURL(file);
+  };
+  
+
   return (
     <div>
       <div id="template">
-        <div id="back3">
-        <div>
-          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
-        </div>
-          <div id="cardd">
-            <div id="cont">
-              <div id="jj">아이디</div> &nbsp; &nbsp;&nbsp;{userId}
-            </div>
+        <div id="back2">
+          <div>
+            <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
           </div>
-          <br />
-          <br />
-          <br />
-          {tutorUsernames.length > 0 && (
-            <>
-              <div id="carddd">
-                <div id="cont">
-                  <div id="jj">관리 학생</div> &nbsp; &nbsp;
-                  <ul>
-                    {tutorUsernames.map((tutorUsername) => (
-                      <li key={tutorUsername}>{tutorUsername}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </>
-          )}
+          <br></br>
+          <br></br>
+          <div className="centered-container">
+            {!selectedImage && (
+              <label htmlFor="profile-image" className="profile-image-label">
+                프로필 사진 설정
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="profile-image"
+                  onChange={handleImageUpload}
+                  style={{ display: 'none' }}
+                />
+              </label>
+            )}
+            {selectedImage && (
+              <img src={selectedImage} alt="Selected Image" className="centered-image" />
+            )}
+            <p className="centered-text">
+              <span id="tea">{username}</span>
+              <br />
+              과외 선생님
+            </p>
+          </div>
+
+
+              <div id="jjtt">아이디</div>
+              <input 
+              type='text'
+              id="bbbbb"
+              value={userId}
+              style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
+              ></input>
+
+              <br></br><br></br>
+
+              <div id="jjtt">관리 학생</div>
+          <input
+            type="text"
+            id="bbbbb"
+            value={(tutorUsernames.length > 0 ? "" + tutorUsernames.join(", ") : "")}
+            style={{
+              border: '1px solid #C9C9C9',
+              borderRadius: '15px',
+              backgroundColor: '#fff4f4'
+            }}
+          />
+
+          <button onClick={handleLogout} className="centered-button">
+            &JOY 로그아웃
+          </button>
         </div>
+
       </div>
-      <button onClick={handleLogout}>로그아웃</button>
+
+
     </div>
   );
 };

@@ -185,7 +185,7 @@ const RolePage = () => {
           <br />
           <div className="mb-3">
             <div className="form_toggle row-vh d-flex flex-row justify-content-between">
-              <div className="form_radio_btn" id="rrr">
+              <div className="form_radio_btn">
                 <input
                   id="radio-1"
                   type="radio"
@@ -195,7 +195,7 @@ const RolePage = () => {
                 />
                 <label htmlFor="radio-1">선생님</label>
               </div>
-              <div className="form_radio_btn" id="rrr">
+              <div className="form_radio_btn">
                 <input
                   id="radio-2"
                   type="radio"

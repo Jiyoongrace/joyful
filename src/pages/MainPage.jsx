@@ -18,8 +18,9 @@ const MainPage = () => {
         <p id="intro">1인 과외 관리를<br></br>
         편리하고 즐겁게,<span id="joy">JOY.</span></p>
 
+
         <Link to="/rolepage">
-            <Button text={value} bgcolor={false}/>
+          <button id="btn4">&JOY 하러 가기</button>
         </Link>
         </div>
         </div>

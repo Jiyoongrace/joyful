@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './pagecss/main.css';
 import JOY2 from './JOY2.png';
-import './pagecss/clcl.css';
+import './css/clcl.css';
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 
