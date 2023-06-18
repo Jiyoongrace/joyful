@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './pagecss/main.css';
 import axios from 'axios';
 
 const MyPage = () => {
   const location = useLocation();
-  const history = useHistory();
   const searchParams = new URLSearchParams(location.search);
   const userId = searchParams.get('userId');
   const username = searchParams.get('username');
@@ -32,7 +31,7 @@ const MyPage = () => {
     // 로그아웃 로직을 수행합니다. (예: 세션 클리어, 토큰 제거 등)
 
     // 메인 페이지로 리디렉션합니다.
-    history.push('/mainpage');
+    window.location.href = '/mainpage';
   };
 
   return (

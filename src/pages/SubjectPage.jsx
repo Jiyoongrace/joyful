@@ -1,20 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import './pagecss/template.css';
 
 const SubjectPage = () => {
   const [posts, setPosts] = React.useState([]);
-  const [form, setForm] = React.useState({ id: '', subject: '', pages: '' });
-  const [update, setUpdate] = React.useState({ id: '', subject: '', pages: '' });
-  const { id, subject, pages } = update;
+  const [form, setForm] = React.useState({ id: '', userId: '', subject: '', pages: '' });
+  const [update, setUpdate] = React.useState({ id: '', userId: '', subject: '', pages: '' });
+  const { id, userId, subject, pages } = update;
   const [open, setOpen] = React.useState(false);
+  const [tutorUsernames, setTutorUsernames] = useState([]);
 
   React.useEffect(() => {
     // read
     axios({ url: 'http://localhost:3001/subjects', method: 'GET' }).then(
       ({ data }) => setPosts(data)
     );
+  }, []);
+
+  React.useEffect(() => {
+    axios.get('http://localhost:3001/userone').then(({ data }) => {
+      const filteredUsernames = data
+        .filter((user) => user.tutorId == 'beulbeul') // Adjust the condition based on your data structure
+        .map((user) => user.username);
+      setTutorUsernames(filteredUsernames);
+    });
   }, []);
 
   return (
@@ -24,7 +34,19 @@ const SubjectPage = () => {
         <div id="back2">
 
         <img src="JOY2.png" id="logo3"></img>
-        <div id="fff">&nbsp;이숙명 <span id="ssss">학생의</span><br></br> <span id="sssss">수업을 추가해 주세요.</span></div>
+        <div id="fff">&nbsp;
+        <select
+              id="selectStudent"
+              value={form.userId}
+              onChange={(e) => setForm({ ...form, userId: e.target.value })}
+            >
+              <option value="전체학생">학생선택</option>
+              {tutorUsernames.map((username) => (
+                <option key={username} value={username}>
+                  {username}
+                </option>
+              ))}
+            </select> <span id="ssss">학생의</span><br></br> <span id="sssss">수업을 추가해 주세요.</span></div>
         
 
         <div id="pp"><br></br><span id="ppp">과목</span><br></br><br></br><br></br>

@@ -3,9 +3,11 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './pagecss/main.css';
 import JOY2 from './JOY2.png';
+import { Link } from "react-router-dom";
 
 const ClassPage = () => {
   const { id } = useParams();
+  const { userId } = useParams();
   const [post, setPost] = React.useState(null);
   const [update, setUpdate] = React.useState({ subject: '', study: '', hw: '', current: '', grade: '', completed: '' });
   const { subject, study, hw, current, grade, completed } = update;
@@ -191,7 +193,7 @@ const ClassPage = () => {
                     <label htmlFor="completed-no">X</label>
                   </div>
                 </div>
-                <button onClick={handleUpdate}>Update</button>
+                <Link to="/cardpage"><button onClick={handleUpdate}>Update</button></Link>
               </div>
             </div>
           </div>

@@ -1,50 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './pagecss/main.css';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
 
 const CardPage = () => {
-  const [posts, setPosts] = React.useState([]);
-  const [subjects, setSubjects] = React.useState([]);
-  const [form, setForm] = React.useState({ id: '', study: '', hw: '', subject: 'all' });
-  const [update, setUpdate] = React.useState({ id: '', study: '', hw: '', subject: '' });
-  const { id, study, hw, subject } = update;
-  const [open, setOpen] = React.useState(false);
-  const [ratio, setRatio] = React.useState(0);
+  const [posts, setPosts] = useState([]);
+  const [subjects, setSubjects] = useState([]);
+  const [form, setForm] = useState({ student: 'all', subject: 'all' });
+  const [ratio, setRatio] = useState(0);
+  const [tutorUsernames, setTutorUsernames] = useState([]);
 
-  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
-
-  const toggleNavBar = () => {
-    setIsNavBarOpen(!isNavBarOpen);
-  };
-
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get('http://localhost:3001/subjects').then(({ data }) => {
       setSubjects(data);
     });
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get('http://localhost:3001/lessons').then(({ data }) => {
       setPosts(data);
     });
   }, []);
 
-  React.useEffect(() => {
-    if (form.subject) {
-      axios
-        .get(`http://localhost:3001/subjects?subject=${form.subject}`)
-        .then(({ data }) => {
-          if (data.length > 0) {
-            const { current, pages } = data[0];
-            const calculatedRatio = ((current / pages) * 100).toFixed(2); // Round the ratio to 2 decimal places
-            setRatio(calculatedRatio);
-          }
-        })
-        .catch((error) => console.log(error));
+  useEffect(() => {
+    const { student, subject } = form;
+    let url = 'http://localhost:3001/lessons';
+
+    if (student !== 'all') {
+      url += `?userId=${student}`;
     }
-  }, [form.subject]);
+    if (subject !== 'all') {
+      url += student !== 'all' ? `&subject=${subject}` : `?subject=${subject}`;
+    }
+
+    axios.get(url).then(({ data }) => {
+      setPosts(data);
+    }).catch((error) => {
+      console.log(error);
+    });
+
+    const selectedSubject = subjects.find(
+      (subj) => subj.userId === student && subj.subject === subject
+    );
+    if (selectedSubject) {
+      const calculatedRatio = ((selectedSubject.current / selectedSubject.pages) * 100).toFixed(2);
+      setRatio(calculatedRatio);
+    } else {
+      setRatio(0);
+    }
+  }, [form, subjects]);
+
+  React.useEffect(() => {
+    axios.get('http://localhost:3001/userone').then(({ data }) => {
+      const filteredUsernames = data
+        .filter((user) => user.tutorId === 'beulbeul') // Adjust the condition based on your data structure
+        .map((user) => user.username);
+      setTutorUsernames(filteredUsernames);
+    });
+  }, []);
 
   const progressBarStyles = {
     width: `${ratio}%`,
@@ -57,57 +70,62 @@ const CardPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-        <div>
-          <img
-            src="JOY2.png"
-            alt="Logo"
-            id="logo3"
-            onClick={toggleNavBar}
-            style={{ cursor: 'pointer' }}
-          />
-          <Navbar isOpen={isNavBarOpen} />
-          {/* 이하 페이지의 내용 */}
-        </div>
+          <img src="JOY2.png" id="logo3" alt="로고" />
           <div id="aa">
-            이숙명 <span id="cc"> &nbsp; 학생의</span>
+            <select
+              value={form.student}
+              onChange={(e) => setForm({ ...form, student: e.target.value })}
+            >
+              <option value="all">전체학생</option>
+              {tutorUsernames.map((username) => (
+                <option key={username} value={username}>
+                  {username}
+                </option>
+              ))}
+            </select>
+            <span id="cc"> &nbsp; 학생의</span>
           </div>
           <Link to="/subjectpage" id="ccc">
             +
           </Link>
           <div>
-          <form>
-          <select
-            name="subject"
-            id="bb"
-            value={form.subject}
-            onChange={(e) => setForm((prevForm) => ({ ...prevForm, subject: e.target.value }))}
-          >
-            <option value="all">전체</option> {/* Add a new option for displaying all data */}
-            {subjects.map((subject) => (
-              <option key={subject.id} value={subject.subject}>
-                {subject.subject}
-              </option>
-            ))}
-          </select>
-        </form>
+            <form>
+              <select
+                name="subject"
+                id="bb"
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
+              >
+                <option value="all">전체</option>
+                {subjects
+                  .filter((subject) => subject.userId === form.student)
+                  .map((subject) => (
+                    <option key={subject.id} value={subject.subject}>
+                      {subject.subject}
+                    </option>
+                  ))}
+              </select>
+            </form>
             <span id="dd">
               진도율은 &nbsp;
               <span id="ee">{ratio}%</span> &nbsp;입니다.
             </span>
-            <div style={{ width: '100%', height: '20px', backgroundColor: '#eee', borderRadius: '10px', marginTop: '15px' }}>
+            <div
+              style={{
+                width: '100%',
+                height: '20px',
+                backgroundColor: '#eee',
+                borderRadius: '10px',
+                marginTop: '15px',
+              }}
+            >
               <div style={progressBarStyles}></div>
             </div>
           </div>
 
           <div>
             <br></br>
-            {posts
-            .filter((post) => {
-              if (form.subject === 'all') { // Check if the selected option is 'all'
-                return true; // Display all posts
-              }
-              return subjects.find((subject) => subject.subject === post.subject)?.subject === form.subject;
-            }).map((post) => {
+            {posts.map((post) => {
               return (
                 <div
                   key={`post_${post.id}`}
@@ -129,7 +147,11 @@ const CardPage = () => {
                       <div id="jj">오늘의 진도</div> &nbsp;
                       <div
                         id="bbb"
-                        style={{ border: '1px solid #C9C9C9', borderRadius: '20px', backgroundColor: '#fff4f4' }}
+                        style={{
+                          border: '1px solid #C9C9C9',
+                          borderRadius: '20px',
+                          backgroundColor: '#fff4f4',
+                        }}
                       >
                         &nbsp;&nbsp;{post.study}
                       </div>
@@ -138,7 +160,11 @@ const CardPage = () => {
                       <div id="jj">오늘의 숙제</div> &nbsp;
                       <div
                         id="bbb"
-                        style={{ border: '1px solid #C9C9C9', borderRadius: '20px', backgroundColor: '#fff4f4' }}
+                        style={{
+                          border: '1px solid #C9C9C9',
+                          borderRadius: '20px',
+                          backgroundColor: '#fff4f4',
+                        }}
                       >
                         &nbsp;&nbsp;{post.hw}
                       </div>
@@ -154,9 +180,7 @@ const CardPage = () => {
                       onClick={() => {
                         axios
                           .delete(`http://localhost:3001/lessons/${post.id}`)
-                          .then(() =>
-                            setPosts((prev) => prev.filter((item) => post.id !== item.id))
-                          )
+                          .then(() => setPosts((prev) => prev.filter((item) => post.id !== item.id)))
                           .catch((e) => {
                             console.log(e);
                           });

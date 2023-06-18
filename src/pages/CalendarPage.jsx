@@ -7,14 +7,25 @@ import 'react-calendar/dist/Calendar.css';
 
 const CalendarPage = () => {
   const [posts, setPosts] = useState([]);
-  const [form, setForm] = useState({ id: '', num: '', date: '' });
-  const [update, setUpdate] = useState({ id: '', num: '', date: '' });
-  const { id, num, date } = update;
+  const [form, setForm] = useState({ id: '', userId: '', num: '', date: '' });
+  const [update, setUpdate] = useState({ id: '', userId: '', num: '', date: '' });
+  const { id, userId, num, date } = update;
   const [open, setOpen] = useState(false);
+  const [tutorUsernames, setTutorUsernames] = useState([]);
 
   React.useEffect(() => {
     // read
     axios({ url: 'http://localhost:3001/lessons', method: 'GET' }).then(({ data }) => setPosts(data));
+  }, []);
+
+  
+  React.useEffect(() => {
+    axios.get('http://localhost:3001/userone').then(({ data }) => {
+      const filteredUsernames = data
+        .filter((user) => user.tutorId == 'beulbeul') // Adjust the condition based on your data structure
+        .map((user) => user.username);
+      setTutorUsernames(filteredUsernames);
+    });
   }, []);
 
   const handleDateChange = (selectedDate) => {
@@ -36,8 +47,20 @@ const CalendarPage = () => {
             <Calendar value={new Date()} onChange={handleDateChange} locale="en-US" />
           </div>
           <div id="fff">
-            <span id="sss">●</span>&nbsp;이숙명
-          </div>
+            <span id="sss">+</span>&nbsp;
+            <select
+              id="selectStudent"
+              value={form.userId}
+              onChange={(e) => setForm({ ...form, userId: e.target.value })}
+            >
+              <option value="전체학생">학생선택</option>
+              {tutorUsernames.map((username) => (
+                <option key={username} value={username}>
+                  {username}
+                </option>
+              ))}
+            </select>
+          </div>       
           <div id="ggg">학생 수업 추가</div>
           <div id="contt">
             <input
