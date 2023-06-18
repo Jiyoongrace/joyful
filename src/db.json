@@ -21,7 +21,7 @@
       "study": "미분하기",
       "hw": "쎈 ~50",
       "current": 49,
-      "grade": 10,
+      "grade": 5,
       "completed": 10
     },
     {
@@ -33,7 +33,7 @@
       "study": "등차수열",
       "hw": "쎈 ~70",
       "current": 75,
-      "grade": 5,
+      "grade": 10,
       "completed": 5
     },
     {
@@ -52,7 +52,13 @@
       "id": 5,
       "userId": "배눈송",
       "num": "2",
-      "date": "6월 26일"
+      "date": "6월 26일",
+      "subject": "",
+      "study": "ㄴㄴ",
+      "hw": "ㄴㄴ",
+      "current": "3",
+      "grade": null,
+      "completed": null
     },
     {
       "id": 6,
