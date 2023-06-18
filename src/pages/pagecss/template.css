@@ -39,6 +39,7 @@
     color: #000000;
     margin-top: 2%;
     background-color: #ffffff;
+    
 }
 
 #back3 {
@@ -82,17 +83,16 @@
 }
 #btn3 {            
     background: #7C8FFF;
+    height: 45px;
+    width: 230px;
+    text-align: center;
     border-radius: 20px;
-    padding: 10px;
-    width: 260px;
     border-width: 3px;
     color: white;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 800;
     font-size: 25px;
-    font-family: "800";
-    padding: 10px 20px;
     box-shadow: 0px 1px 1px #000000;
     border: 0.2px solid #001392;
     margin-top: 20px;
@@ -104,16 +104,15 @@
   #btn4 {            
     background: #ffffff;
     border-radius: 20px;
-    padding: 10px;
-    width: 260px;
+    height: 45px;
+    width: 230px;
+    text-align: center;
     border-width: 3px;
     color: #7C8FFF;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 800;
     font-size: 25px;
-    font-family: "800";
-    padding: 10px 20px;
     box-shadow: 0px 1px 1px #000000;
     border: 0.2px solid #798bff;
     margin-top: 20px;
@@ -150,9 +149,11 @@
     height : 45px;
     border: 1px solid #EAE7E7;
     border-radius: 10px;
+
 }
 .form_radio_btn input[type=radio] {
     display: none;
+    text-align: center;
 }
 .form_radio_btn label {
     display: block;
@@ -161,12 +162,14 @@
     text-align: center;
     height: -webkit-fill-available;
     line-height: 45px;
+    width: 100%;
 }
  
 /* Checked */
 .form_radio_btn input[type=radio]:checked + label {
     background: #8897FE;
     color: #fff;
+    width: 100%;
 }
  
 /* Hover */
@@ -213,8 +216,8 @@
 
 
 #ggg {
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 15px;
+    margin-right: 100px;
     color: #848484;
     font-weight: 600;
     font-size: 19px;
@@ -224,38 +227,37 @@
 
 #contt {
     display:inline-flex;
-    margin-top: 7px;
+    margin-top: 15px;
     padding: 5px;
+    margin-right: 90px;
 }
 
 #bbbb {
     font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size:15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size:15px;
 
-color: #784210;
+    color: #784210;
 
-padding: 8px;
-width: 80px;
-height: 20px;
-float:right;
-text-align: left;
+    width: 80px;
+    height: 20px;
+    text-align: left;
 
 }
 #bbbbb {
     font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size:15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size:20px;
 
-color: #784210;
+    color: #784210;
 
-padding: 8px;
-width: 300px;
-height: 20px;
-text-align: left;
-margin-left: 15px;
+    padding: 8px;
+    width: 300px;
+    height: 20px;
+    text-align: left;
+    margin-left: 15px;
 }
 
 #zz {
@@ -265,13 +267,13 @@ margin-left: 15px;
     border: 1px solid #C9C9C9;
     border-radius: 15px;
     align-items: center;
-text-align: center;
+    text-align: center;
 
-color: #717171;
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 500;
-font-size: 15px;
+    color: #717171;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
 
 }
 
@@ -306,4 +308,55 @@ font-size: 15px;
     float: left;
     margin-left: 140px;
     margin-top: 120px;
+}
+
+#zztt {
+    width: 85px;
+    height: 39px;
+    background: #F0F0F0;
+    border: 1px solid #C9C9C9;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+
+    color: #717171;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    float: right;
+    margin-top: -150px;
+    margin-right: 20px;
+}
+
+#zztt:hover {
+    background: #d0fff0;
+    border: 1px solid #91d2bd;
+    color: rgb(117, 117, 117);
+}
+
+#zzsv {
+    width: 85px;
+    height: 35px;
+    background: #F0F0F0;
+    border: 1px solid #C9C9C9;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+
+    color: #717171;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    float: right;
+    margin-top: -41px;
+    margin-right: 25px;
+
+}
+
+#zzsv:hover {
+    background: #d0fff0;
+    border: 1px solid #91d2bd;
+    color: rgb(117, 117, 117);
 }

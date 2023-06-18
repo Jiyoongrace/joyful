@@ -322,3 +322,62 @@ margin-top: 120px;
     margin-left: 25px;
     margin-top: 25px;
 }
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .centered-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .centered-text {
+    text-align: center;
+  }
+  
+  .centered-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 140px;
+    width: 170px;
+    font-size: 23px;
+    height: 46px;
+    border-radius: 20px;
+  }
+  
+  .profile-image-label {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #dedbff;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .profile-image-label input[type='file'] {
+    display: none;
+  }
+  
+  #tea {
+    color:#7789FF;
+    font-size: 28px;
+  }
+  
+  #jjtt {
+    color: #848484;
+    font-weight: 700;
+    font-size: 25px;
+    float: left;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-family: 'Pretendard';
+    font-style: normal;
+  }
+
