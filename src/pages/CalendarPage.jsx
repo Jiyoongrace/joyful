@@ -49,31 +49,12 @@ const CalendarPage = () => {
     setUpdate((prev) => ({ ...prev, date: formattedDate }));
   };
 
+
   const getTileClassName = ({ date }) => {
     const formattedDate = `${date.getMonth() + 1}월 ${date.getDate()}일`;
-    const userIds = posts
-      .filter((post) => post.date === formattedDate)
-      .map((post) => post.userId);
-  
-    if (userIds.length > 1) {
-      const colors = ['blue', 'green', 'red', 'orange', 'purple']; // 색상 목록
-      const colorIndex = userIds.reduce((index, userId) => {
-        // userId를 기반으로 색상을 매핑
-        const charCodeSum = Array.from(userId).reduce(
-          (sum, char) => sum + char.charCodeAt(),
-          0
-        );
-        return index + charCodeSum;
-      }, 0);
-      const color = colors[colorIndex % colors.length]; // 색상 선택
-      return `react-calendar__tile--hasMultiple react-calendar__tile--${color}`;
-    } else if (userIds.length === 1) {
-      return 'react-calendar__tile--hasActive';
-    } else {
-      return '';
-    }
+    const hasLesson = posts.some((post) => post.date === formattedDate);
+    return hasLesson ? 'react-calendar__tile--hasActive' : '';
   };
-  
 
   return (
     <div>

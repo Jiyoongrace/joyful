@@ -307,3 +307,10 @@ font-size: 15px;
     margin-left: 140px;
     margin-top: 120px;
 }
+
+.custom-calendar-tile--hasActive {
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  
