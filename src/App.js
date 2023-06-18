@@ -30,7 +30,7 @@ function App() {
 					<Route path="/calendarpage" element={<CalendarPage />}></Route>
 					<Route path="/cardpage" element={<CardPage />}></Route>
 					<Route path="/subjectpage" element={<SubjectPage />}></Route>
-					<Route path="/classpage" element={<ClassPage />}></Route>
+					<Route path="/classpage/:id" element={<ClassPage />}></Route>
 					<Route path="/feedbackpage" element={<FeedbackPage />}></Route>
 					<Route path="/noticepage" element={<NoticePage />}></Route>
 					<Route path="/samplepage" element={<SamplePage />}></Route>

@@ -7,7 +7,7 @@ import Button from '../components/Button';
 
 const MainPage = () => {
 
-    const [value, setValue] = useState("&JOY 하러 가기");
+  const [value, setValue] = useState("&JOY 하러 가기");
 
   return (
     <div>
