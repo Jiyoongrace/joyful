@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './pagecss/main.css';
 import JOY2 from './JOY2.png';
+import './pagecss/clcl.css';
 import { Link } from "react-router-dom";
 
 const ClassPage = () => {
@@ -12,6 +14,12 @@ const ClassPage = () => {
   const [update, setUpdate] = React.useState({ subject: '', study: '', hw: '', current: '', grade: '', completed: '' });
   const { subject, study, hw, current, grade, completed } = update;
   const [subjects, setSubjects] = React.useState([]);
+
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   React.useEffect(() => {
     axios
@@ -82,16 +90,25 @@ const ClassPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-          <img src={JOY2} id="logo3" alt="Logo" />
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
           <div>
             <div>
-              <div>
-                <div>Date: {post.date}</div>
-                <div>Number: {post.num}</div>
-                <div>
-                  <label htmlFor="subject">Subject:</label>
+              <div id="pp">
+              <div id="ff">
+                      <span id="ii">●</span> {post.date} 수업
+                    </div>
+                    <div id="ggc">
+                      {post.num}회차 <span id="hh"> / 8회차</span>
+                    </div><br></br><br></br><br></br>
+
+                <div id="dvdv">
+                
+                  <label htmlFor="subject">과목 &nbsp;&nbsp;</label>
                   <select
                     id="subject"
+                    
                     value={subject}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, subject: e.target.value }))}
                   >
@@ -102,35 +119,38 @@ const ClassPage = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label htmlFor="study">Study:</label>
+                <div id="crcr">
+                  <label htmlFor="study">진도</label>
                   <input
                     type="text"
                     id="study"
                     value={study}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, study: e.target.value }))}
                   />
                 </div>
-                <div>
-                  <label htmlFor="hw">Homework:</label>
+                <div id="crcr">
+                  <label htmlFor="hw">숙제</label>
                   <input
                     type="text"
                     id="hw"
                     value={hw}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, hw: e.target.value }))}
                   />
                 </div>
-                <div>
-                  <label htmlFor="current">Current:</label>
+                <div id="crcr">
+                  <label htmlFor="current">진도 페이지</label>
                   <input
                     type="number"
                     id="current"
                     value={current}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, current: e.target.value }))}
                   />
                 </div>
-                <div>
-                  <label>학습 수행도:</label>
+                <div id="crcr"><br></br>
+                  <label>학습 수행도</label>
                   <div id="grade-options">
                     <input
                       type="radio"
@@ -160,9 +180,9 @@ const ClassPage = () => {
                     />
                     <label htmlFor="low">하</label>
                   </div>
-                </div>
-                <div>
-                  <label>숙제 완료:</label>
+                </div><br></br>
+                <div id="crcr">
+                  <label>숙제 완료</label>
                   <div id="completed-options">
                     <input
                       type="radio"
@@ -192,8 +212,9 @@ const ClassPage = () => {
                     />
                     <label htmlFor="completed-no">X</label>
                   </div>
-                </div>
-                <Link to="/cardpage"><button onClick={handleUpdate}>Update</button></Link>
+                </div><br></br>
+                <Link to="/cardpage"><button id="crcr" onClick={handleUpdate}
+                style={{ fontSize: '20px', width:'80px', height: '40px', marginBottom: '25px' }}>완료</button></Link>
               </div>
             </div>
           </div>

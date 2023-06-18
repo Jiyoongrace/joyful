@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import './pagecss/main.css';
 import { Link } from 'react-router-dom';
+import JOY2 from './JOY2.png';
 
 const CardPage = () => {
   const [posts, setPosts] = useState([]);
@@ -70,7 +72,9 @@ const CardPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-          <img src="JOY2.png" id="logo3" alt="로고" />
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
           <div id="aa">
             <select
               value={form.student}

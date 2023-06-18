@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState }, { useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import './pagecss/template.css';
+import JOY2 from './JOY2.png';
 
 const SubjectPage = () => {
   const [posts, setPosts] = React.useState([]);
@@ -9,7 +11,6 @@ const SubjectPage = () => {
   const [update, setUpdate] = React.useState({ id: '', userId: '', subject: '', pages: '' });
   const { id, userId, subject, pages } = update;
   const [open, setOpen] = React.useState(false);
-  const [tutorUsernames, setTutorUsernames] = useState([]);
 
   React.useEffect(() => {
     // read
@@ -33,7 +34,9 @@ const SubjectPage = () => {
         
         <div id="back2">
 
-        <img src="JOY2.png" id="logo3"></img>
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
         <div id="fff">&nbsp;
         <select
               id="selectStudent"

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Navbar from './Navbar';
 import { useLocation } from 'react-router-dom';
 import './pagecss/main.css';
 import axios from 'axios';
+import JOY2 from './JOY2.png';
 
 const MyPage = () => {
   const location = useLocation();
@@ -9,6 +11,12 @@ const MyPage = () => {
   const userId = searchParams.get('userId');
   const username = searchParams.get('username');
   const [tutorUsernames, setTutorUsernames] = useState([]);
+
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   useEffect(() => {
     const fetchTutorUsernames = async () => {
@@ -38,7 +46,9 @@ const MyPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-          <img src="JOY2.png" id="logo3" alt="로고" />
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
           <div id="cardd">
             <div id="cont">
               <div id="jj">아이디</div> &nbsp; &nbsp;&nbsp;{userId}
