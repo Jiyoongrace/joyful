@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import './pagecss/main.css';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
+import JOY2 from './JOY2.png';
 
 const CardPage = () => {
   const [posts, setPosts] = React.useState([]);
@@ -58,15 +59,7 @@ const CardPage = () => {
       <div id="template">
         <div id="back3">
         <div>
-          <img
-            src="JOY2.png"
-            alt="Logo"
-            id="logo3"
-            onClick={toggleNavBar}
-            style={{ cursor: 'pointer' }}
-          />
-          <Navbar isOpen={isNavBarOpen} />
-          {/* 이하 페이지의 내용 */}
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
         </div>
           <div id="aa">
             이숙명 <span id="cc"> &nbsp; 학생의</span>

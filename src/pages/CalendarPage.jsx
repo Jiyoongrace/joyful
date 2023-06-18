@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import './pagecss/template.css';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import JOY2 from './JOY2.png';
 
 const CalendarPage = () => {
   const [posts, setPosts] = useState([]);
@@ -11,6 +13,12 @@ const CalendarPage = () => {
   const [update, setUpdate] = useState({ id: '', num: '', date: '' });
   const { id, num, date } = update;
   const [open, setOpen] = useState(false);
+
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   React.useEffect(() => {
     // read
@@ -30,6 +38,9 @@ const CalendarPage = () => {
     <div>
       <div id="template">
         <div id="back2">
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
           <br></br><br></br>
           <div>김눈송 선생님의 월간 과외 캘린더</div>
         <div style={{ padding: 20 }}>

@@ -1,0 +1,85 @@
+/* Labels */
+label {
+  color: #848484;
+  font-weight: 700;
+  font-size: 25px;
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-family: 'Pretendard';
+  font-style: normal;
+}
+
+/* Select options */
+select {
+  width: 120px;
+  height: 35px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  color: #929191;
+  text-align: center;
+  background: #F2F2F2;
+  border: 3px solid #a6b2ff;
+  border-radius: 10px;
+  color: #6F3500;
+  margin-top: 0px;
+}
+
+/* Inputs */
+input {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #784210;
+  padding: 8px;
+  width: 300px;
+  height: 20px;
+  text-align: left;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    width: 100px;
+    height: 100px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Update button */
+button {
+  width: 85px;
+  height: 35px;
+  background: #F0F0F0;
+  border: 1px solid #C9C9C9;
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  color: #717171;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #ffc2c2;
+  border: 1px solid #ffa0a0;
+  color: #ffffff;
+}
+
+#dvdv {
+    display: flex;
+}
+
+#crcr {
+    margin-top: 25px;
+}
+
+.lblb {
+    padding: 10px;
+    font-size: 50px;
+}

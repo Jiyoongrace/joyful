@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Navbar from './Navbar';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import './pagecss/template.css';
+import JOY2 from './JOY2.png';
 
 const SubjectPage = () => {
   const [posts, setPosts] = React.useState([]);
@@ -9,6 +11,12 @@ const SubjectPage = () => {
   const [update, setUpdate] = React.useState({ id: '', subject: '', pages: '' });
   const { id, subject, pages } = update;
   const [open, setOpen] = React.useState(false);
+  
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   React.useEffect(() => {
     // read
@@ -23,7 +31,9 @@ const SubjectPage = () => {
         
         <div id="back2">
 
-        <img src="JOY2.png" id="logo3"></img>
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
         <div id="fff">&nbsp;이숙명 <span id="ssss">학생의</span><br></br> <span id="sssss">수업을 추가해 주세요.</span></div>
         
 
