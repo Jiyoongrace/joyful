@@ -8,7 +8,7 @@
       "subject": "고등수학(상)",
       "study": "원의 방정식",
       "hw": "쎈 ~100",
-      "current": 200,
+      "current": "300",
       "grade": 5,
       "completed": 5
     },
@@ -94,7 +94,13 @@
       "id": 9,
       "userId": "강숙명",
       "num": "4",
-      "date": "6월 27일"
+      "date": "6월 27일",
+      "subject": "공통수학(하)",
+      "study": "33",
+      "hw": "222",
+      "current": "22",
+      "grade": 10,
+      "completed": 10
     },
     {
       "id": 10,

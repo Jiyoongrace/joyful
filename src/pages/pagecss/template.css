@@ -360,11 +360,3 @@
     border: 1px solid #91d2bd;
     color: rgb(117, 117, 117);
 }
-
-
-.custom-calendar-tile--hasActive {
-    background-color: red;
-    border-radius: 50%;
-  }
-  
-  
