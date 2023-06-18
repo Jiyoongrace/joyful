@@ -103,7 +103,7 @@ const RolePage = () => {
             placeholder="비밀번호 재확인"
             onChange={handlePasswordMatch}
           />
-          {!passwordMatch && <span>비밀번호가 일치하지 않습니다.</span>}
+          {!passwordMatch && <span><br></br>비밀번호가 일치하지 않습니다.</span>}
         </p>
       </>
     );
@@ -170,7 +170,7 @@ const RolePage = () => {
             placeholder="비밀번호 재확인"
             onChange={handlePasswordMatch}
           />
-          {!passwordMatch && <span>비밀번호가 일치하지 않습니다.</span>}
+          {!passwordMatch && <span><br></br>비밀번호가 일치하지 않습니다.</span>}
         </p>
       </>
     );
@@ -195,7 +195,7 @@ const RolePage = () => {
                 />
                 <label htmlFor="radio-1">선생님</label>
               </div>
-              <div className="form_radio_btn" id="sss">
+              <div className="form_radio_btn" id="rrr">
                 <input
                   id="radio-2"
                   type="radio"
@@ -221,6 +221,9 @@ const RolePage = () => {
               onClick={handleFormSubmit}
             />
           </Link>
+          <Link to="/loginPage">
+          <button id="btn4">로그인 하러 가기</button>
+        </Link>
         </div>
       </div>
     </div>

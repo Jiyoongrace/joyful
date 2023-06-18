@@ -8,9 +8,9 @@
       "num": 1,
       "study": "이차부등식이 항상 성립할 조건",
       "hw": "쎈 110~127 page",
-      "current": 66,
-      "grade": 10,
-      "completed": 2
+      "current": 300,
+      "grade": 5,
+      "completed": 5
     },
     {
       "id": 2,
@@ -41,8 +41,9 @@
       "num": 4,
       "study": "집합의 뜻과 분류",
       "hw": "쎈 10~29 page",
-      "grade": 10,
-      "completed": 5
+      "grade": 2,
+      "completed": 2,
+      "current": 48
     },
     {
       "id": 5,
@@ -72,7 +73,7 @@
       "subject": "공통수학(하)",
       "study": "qqq",
       "hw": "ssqq",
-      "current": 23,
+      "current": 36,
       "grade": 2,
       "completed": 2
     }
@@ -157,6 +158,22 @@
       "tutorId": "giyun3632",
       "parents": "01088889999",
       "id": 12
+    },
+    {
+      "username": "배지윤",
+      "userId": "ggww",
+      "userPw": "ggww",
+      "tutorId": "",
+      "parents": "",
+      "id": 13
+    },
+    {
+      "username": "블블블",
+      "userId": "bbbb",
+      "userPw": "bbbb",
+      "tutorId": "beulbeul",
+      "parents": "00",
+      "id": 14
     }
   ],
   "subjects": [
@@ -164,19 +181,19 @@
       "id": 1,
       "subject": "공통수학(상)",
       "pages": 300,
-      "current": 66
+      "current": 300
     },
     {
       "id": 2,
       "subject": "공통수학(하)",
       "pages": 180,
-      "current": 23
+      "current": 36
     },
     {
       "id": 3,
       "subject": "미적분1",
       "pages": 300,
-      "current": 0
+      "current": 22
     }
   ],
   "profile": {

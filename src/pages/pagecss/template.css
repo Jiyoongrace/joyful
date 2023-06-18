@@ -99,8 +99,29 @@
   }
   #btn3:hover {
       background-color: #595787;
+      color: #7C8FFF;
   }
-
+  #btn4 {            
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    width: 260px;
+    border-width: 3px;
+    color: #7C8FFF;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    font-family: "800";
+    padding: 10px 20px;
+    box-shadow: 0px 1px 1px #000000;
+    border: 0.2px solid #798bff;
+    margin-top: 20px;
+  }
+  #btn4:hover {
+      background-color: #b994ff;
+      color: #ffffff;
+  }
   form {
     display: flex;
     padding: 30px;

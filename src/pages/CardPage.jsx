@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './pagecss/main.css';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const CardPage = () => {
   const [posts, setPosts] = React.useState([]);
@@ -11,6 +12,12 @@ const CardPage = () => {
   const { id, study, hw, subject } = update;
   const [open, setOpen] = React.useState(false);
   const [ratio, setRatio] = React.useState(0);
+
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  const toggleNavBar = () => {
+    setIsNavBarOpen(!isNavBarOpen);
+  };
 
   React.useEffect(() => {
     axios.get('http://localhost:3001/subjects').then(({ data }) => {
@@ -50,7 +57,17 @@ const CardPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-          <img src="JOY2.png" id="logo3"></img>
+        <div>
+          <img
+            src="JOY2.png"
+            alt="Logo"
+            id="logo3"
+            onClick={toggleNavBar}
+            style={{ cursor: 'pointer' }}
+          />
+          <Navbar isOpen={isNavBarOpen} />
+          {/* 이하 페이지의 내용 */}
+        </div>
           <div id="aa">
             이숙명 <span id="cc"> &nbsp; 학생의</span>
           </div>
