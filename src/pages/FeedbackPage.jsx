@@ -78,23 +78,24 @@ const FeedbackPage = () => {
                   <input
                     type="text"
                     style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
-                  /> 현재 {pagesValue}페이지 중에 {currentValue}페이지만큼 진도 나갔습니다.
+                    value={'현재 '+ pagesValue+'페이지 중 '+ currentValue+'페이지 완료'}
+                  />
                 </div>
                 <div id="crcr">
                   <label htmlFor="grade"><span id="fifi">●&nbsp;</span>학습 능력이 부족한 단원</label>
                   <input
                     type="text"
                     style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
-                  />{studyList.map((study, index) => (
-                    <li key={index}>{study}</li>
-                  ))}
+                    value={studyList.join(", ")}
+                  />
                 </div>
                 <div id="crcr">
                   <label htmlFor="hw"><span id="fifi">●&nbsp;</span>숙제 이행률</label>
                   <input
                     type="text"
                     style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
-                  />80점 만점에 {completedSum}점을 받았습니다.
+                    value={'80점 만점에 ' + completedSum + '점을 받았습니다.'}
+                  />
                 </div>
 
               </div>

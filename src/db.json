@@ -7,9 +7,9 @@
       "date": "6월 18일",
       "subject": "고등수학(상)",
       "study": "원의 방정식",
-      "hw": "쎈 ~100",
-      "current": "300",
-      "grade": 5,
+      "hw": "쎈 ~111",
+      "current": 66,
+      "grade": 2,
       "completed": 5
     },
     {
@@ -20,8 +20,8 @@
       "subject": "미적분2",
       "study": "미분하기",
       "hw": "쎈 ~50",
-      "current": 49,
-      "grade": 5,
+      "current": 56,
+      "grade": 2,
       "completed": 10
     },
     {
@@ -32,9 +32,9 @@
       "subject": "미적분1",
       "study": "등차수열",
       "hw": "쎈 ~70",
-      "current": 75,
+      "current": 21,
       "grade": 2,
-      "completed": 10
+      "completed": 2
     },
     {
       "id": 4,
@@ -44,8 +44,8 @@
       "subject": "확률과 통계",
       "study": "조건부확률",
       "hw": "100",
-      "current": 100,
-      "grade": 10,
+      "current": 40,
+      "grade": 2,
       "completed": 5
     },
     {
@@ -53,12 +53,12 @@
       "userId": "배눈송",
       "num": "2",
       "date": "6월 26일",
-      "subject": "",
-      "study": "ㄴㄴ",
-      "hw": "ㄴㄴ",
-      "current": "3",
-      "grade": null,
-      "completed": null
+      "subject": "확률과 통계",
+      "study": "조합",
+      "hw": "23",
+      "current": 55,
+      "grade": 2,
+      "completed": 2
     },
     {
       "id": 6,
@@ -68,7 +68,7 @@
       "subject": "공통수학(하)",
       "study": "aff",
       "hw": "ddd",
-      "current": "50",
+      "current": 50,
       "grade": 2,
       "completed": 2
     },
@@ -95,18 +95,6 @@
       "current": 200,
       "grade": 2,
       "completed": 5
-    },
-    {
-      "id": 9,
-      "userId": "강숙명",
-      "num": "4",
-      "date": "6월 27일",
-      "subject": "공통수학(하)",
-      "study": "33",
-      "hw": "222",
-      "current": "22",
-      "grade": 10,
-      "completed": 10
     },
     {
       "id": 10,
@@ -263,7 +251,7 @@
       "userId": "강숙명",
       "subject": "고등수학(상)",
       "pages": 400,
-      "current": 200
+      "current": 55
     },
     {
       "id": 2,
@@ -277,7 +265,7 @@
       "userId": "하눈송",
       "subject": "미적분1",
       "pages": 500,
-      "current": 200
+      "current": 33
     },
     {
       "id": 4,
