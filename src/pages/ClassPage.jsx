@@ -23,6 +23,7 @@ const ClassPage = () => {
   const toggleNavBar = () => {
     setIsNavBarOpen(!isNavBarOpen);
   };
+
   useEffect(() => {
     const fetchStudentnames = async () => {
       try {
@@ -37,8 +38,8 @@ const ClassPage = () => {
     };
     fetchStudentnames();
   }, [selectedStudent]);
-  
-  useEffect(() => {
+
+  React.useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(`http://localhost:3001/lessons/${id}`);
@@ -55,6 +56,12 @@ const ClassPage = () => {
         console.log(error);
       }
     };
+    axios
+      .get('http://localhost:3001/subjects')
+      .then(({ data }) => {
+        setSubjects(data);
+      })
+      .catch((error) => console.log(error));
     fetchData();
   }, [id]);
 
@@ -66,19 +73,30 @@ const ClassPage = () => {
         subject,
         study,
         hw,
-        current,
+        current: Number(current),
         grade: parseInt(grade),
         completed: parseInt(completed),
       })
       .then(() => {
         console.log('Lesson updated');
+        const selectedSubject = subjects.find((subj) => subj.subject === subject);
+        if (selectedSubject) {
+          const newCurrent = Number(current);
+          axios
+            .put(`http://localhost:3001/subjects/${selectedSubject.id}`, {
+              ...selectedSubject,
+              current: newCurrent,
+            })
+            .then(() => console.log('Subject current updated'))
+            .catch((error) => console.log(error));
+        }
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  if (!post) {
+  if (!post || subjects.length === 0) {
     return <div>Loading...</div>;
   }
 
@@ -86,21 +104,18 @@ const ClassPage = () => {
     <div>
       <div id="template">
         <div id="back3">
-          <div>
-            <Navbar isOpen={false} image={JOY2} />
-          </div>
+        <div>
+          <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
+        </div>
           <div>
             <div>
               <div id="pp">
-                <div id="ff">
-                  <span id="ii">●</span> {post.date} 수업
-                </div>
-                <div id="ggc">
-                  {post.num}회차 <span id="hh"> / 8회차</span>
-                </div>
-                <br />
-                <br />
-                <br />
+              <div id="ff">
+                      <span id="ii">●</span> {post.date} 수업
+                    </div>
+                    <div id="ggc">
+                      {post.num}회차 <span id="hh"> / 8회차</span>
+                    </div><br></br><br></br><br></br>
 
                 <div id="dvdv">
                 
@@ -124,7 +139,7 @@ const ClassPage = () => {
                     type="text"
                     id="study"
                     value={update.study}
-                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4' }}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, study: e.target.value }))}
                   />
                 </div>
@@ -134,7 +149,7 @@ const ClassPage = () => {
                     type="text"
                     id="hw"
                     value={update.hw}
-                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4' }}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, hw: e.target.value }))}
                   />
                 </div>
@@ -144,12 +159,11 @@ const ClassPage = () => {
                     type="number"
                     id="current"
                     value={update.current}
-                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4' }}
+                    style={{ border: '1px solid #C9C9C9', borderRadius: '15px', backgroundColor: '#fff4f4'}}
                     onChange={(e) => setUpdate((prevUpdate) => ({ ...prevUpdate, current: e.target.value }))}
                   />
                 </div>
-                <div id="crcr">
-                  <br />
+                <div id="crcr"><br></br>
                   <label>학습 수행도</label>
                   <div id="grade-options">
                     <input
@@ -180,8 +194,7 @@ const ClassPage = () => {
                     />
                     <label htmlFor="low">하</label>
                   </div>
-                </div>
-                <br />
+                </div><br></br>
                 <div id="crcr">
                   <label>숙제 완료</label>
                   <div id="completed-options">
@@ -213,17 +226,9 @@ const ClassPage = () => {
                     />
                     <label htmlFor="completed-no">X</label>
                   </div>
-                </div>
-                <br />
-                <Link to="/cardpage">
-                  <button
-                    id="crcr"
-                    onClick={handleUpdate}
-                    style={{ fontSize: '20px', width: '80px', height: '40px', marginBottom: '25px' }}
-                  >
-                    완료
-                  </button>
-                </Link>
+                </div><br></br>
+                <Link to="/cardpage"><button id="crcr" onClick={handleUpdate}
+                style={{ fontSize: '20px', width:'80px', height: '40px', marginBottom: '25px' }}>완료</button></Link>
               </div>
             </div>
           </div>
