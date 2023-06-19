@@ -187,7 +187,7 @@ const CardPage = () => {
                     </div>
                     <br></br>
                     <br></br>
-                    <Link to={`/classpage/${post.id}?student=${form.userId}`}>
+                    <Link to={`/classpage/${post.id}?student=${form.userId}&subject=${form.subject}`}>
                       <button id="zz">일지 수정</button>
                     </Link>
                     &nbsp;&nbsp;

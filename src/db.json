@@ -110,7 +110,7 @@
       "subject": "공통수학(하)",
       "study": "블라",
       "hw": "블라라랄",
-      "current": 50,
+      "current": 100,
       "grade": 10,
       "completed": 10
     },
@@ -291,7 +291,7 @@
       "userId": "하눈송",
       "subject": "공통수학(하)",
       "pages": 100,
-      "current": 50
+      "current": 100
     },
     {
       "id": 6,
