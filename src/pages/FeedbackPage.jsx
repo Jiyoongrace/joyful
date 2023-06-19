@@ -7,7 +7,6 @@ import Soso from './Soso.png';
 import Bad from './Bad.png';
 import axios from 'axios';
 import './pagecss/main.css';
-import { Link } from 'react-router-dom';
 
 const FeedbackPage = () => {
   const location = useLocation();
@@ -221,7 +220,6 @@ const FeedbackPage = () => {
                     lineHeight: '40px'
                   }}> 공감을 눌러주세요!
                 {/* Emoji Components */}
-                <Link to="/cardpage">
                 <img
                   src={Good}
                   alt="Joy Emoji"
@@ -239,7 +237,7 @@ const FeedbackPage = () => {
                   alt="Sad Emoji"
                   onClick={() => handleEmojiClick('😣')}
                   style={{ opacity: selectedEmoji !== '😣' ? 0.3 : 1, width: "40px" }}
-                /></Link>
+                />
               </div><br></br>
             </div>
           </div>
