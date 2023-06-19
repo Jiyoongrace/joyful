@@ -40,7 +40,7 @@ const MyPage = () => {
     // 로그아웃 로직을 수행합니다. (예: 세션 클리어, 토큰 제거 등)
 
     // 메인 페이지로 리디렉션합니다.
-    window.location.href = '/mainpage';
+    window.location.href = '/';
   };
 
   const handleImageUpload = (event) => {
