@@ -129,7 +129,7 @@ const Navbar = ({ image }) => {
               </button>
             </Link>
             <Link
-              to="/mypage"
+              to="/mypagee"
               style={{ textDecoration: 'none' }}
             >
               <button

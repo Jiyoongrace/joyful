@@ -33,7 +33,7 @@ const CalendarPage = () => {
       .get('http://localhost:3001/userone')
       .then(({ data }) => {
         const filteredUsernames = data
-          .filter((user) => user.tutorId === 'kariel1103')
+          .filter((user) => user.tutorId === 'noonsong1234')
           .map((user) => user.username);
         setTutorUsernames(filteredUsernames);
       })

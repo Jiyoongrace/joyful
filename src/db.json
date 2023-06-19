@@ -2,355 +2,318 @@
   "lessons": [
     {
       "id": 1,
-      "userId": "강숙명",
+      "userId": "카리나",
       "num": "1",
-      "date": "6월 18일",
-      "subject": "고등수학(상)",
-      "study": "원의 방정식",
-      "hw": "쎈 ~100",
-      "current": 100,
-      "grade": 10,
-      "completed": 10
-    },
-    {
-      "id": 2,
-      "userId": "강숙명",
-      "num": "2",
-      "date": "6월 21일",
-      "subject": "미적분2",
-      "study": "미분하기",
-      "hw": "쎈 ~50",
-      "current": 300,
+      "date": "5월 23일",
+      "subject": "공통수학(상)",
+      "study": "다항식의 연산",
+      "hw": "개념원리 ~22",
+      "current": 10,
       "grade": 5,
       "completed": 10
     },
     {
+      "id": 2,
+      "userId": "카리나",
+      "num": "2",
+      "date": "5월 25일",
+      "subject": "공통수학(상)",
+      "study": "항등식과 나머지정리",
+      "hw": "개념원리 ~35",
+      "current": 10,
+      "grade": 10,
+      "completed": 5
+    },
+    {
       "id": 3,
-      "userId": "하눈송",
-      "num": "1",
-      "date": "6월 23일",
-      "subject": "미적분1",
-      "study": "등차수열",
-      "hw": "쎈 ~70",
-      "current": 21,
+      "userId": "카리나",
+      "num": "3",
+      "date": "5월 30일",
+      "subject": "공통수학(상)",
+      "study": "인수분해",
+      "hw": "개념원리 ~50",
+      "current": 10,
       "grade": 2,
       "completed": 2
     },
     {
       "id": 4,
-      "userId": "배눈송",
-      "num": "1",
-      "date": "6월 23일",
-      "subject": "확률과 통계",
-      "study": "조건부확률",
-      "hw": "100",
-      "current": 100,
+      "userId": "카리나",
+      "num": "4",
+      "date": "6월 1일",
+      "subject": "공통수학(상)",
+      "study": "복소수의 연산",
+      "hw": "개념원리 ~72",
+      "current": 10,
       "grade": 10,
-      "completed": 5
+      "completed": 2
     },
     {
       "id": 5,
-      "userId": "배눈송",
-      "num": "2",
-      "date": "6월 26일",
-      "subject": "확률과 통계",
-      "study": "조합",
-      "hw": "23",
-      "current": 55,
+      "userId": "카리나",
+      "num": "5",
+      "date": "6월 6일",
+      "subject": "공통수학(상)",
+      "study": "이차방정식의 판별식",
+      "hw": "개념원리 ~115",
+      "current": 10,
       "grade": 2,
-      "completed": 2
+      "completed": 5
     },
     {
       "id": 6,
-      "userId": "하눈송",
-      "num": "2",
-      "date": "6월 27일",
-      "subject": "공통수학(하)",
-      "study": "aff",
-      "hw": "ddd",
-      "current": 100,
-      "grade": 2,
-      "completed": 2
-    },
-    {
-      "id": 7,
-      "userId": "강숙명",
-      "num": "3",
-      "date": "6월 29일",
-      "subject": "기하와벡터",
-      "study": "벡터의 성질",
-      "hw": "개념원리 ~50",
-      "current": 150,
+      "userId": "카리나",
+      "num": "6",
+      "date": "6월 8일",
+      "subject": "공통수학(상)",
+      "study": "삼차방정식과 사차방정식",
+      "hw": "개념원리 ~124",
+      "current": 10,
       "grade": 2,
       "completed": 10
     },
     {
+      "id": 7,
+      "userId": "카리나",
+      "num": "7",
+      "date": "6월 13일",
+      "subject": "공통수학(상)",
+      "study": "연립이차부등식",
+      "hw": "개념원리 ~143",
+      "current": 10,
+      "grade": 5,
+      "completed": 10
+    },
+    {
       "id": 8,
-      "userId": "하눈송",
-      "num": "3",
-      "date": "6월 29일",
-      "subject": "미적분1",
-      "study": "등비수열",
-      "hw": "ㅇㅇㅇㅇ",
-      "current": 200,
+      "userId": "카리나",
+      "num": "8",
+      "date": "6월 15일",
+      "subject": "공통수학(상)",
+      "study": "평면좌표",
+      "hw": "개념원리 ~151",
+      "current": 10,
       "grade": 2,
-      "completed": 5
+      "completed": 2
+    },
+    {
+      "id": 9,
+      "userId": "카리나",
+      "num": "1",
+      "date": "6월 20일",
+      "subject": "공통수학(상)",
+      "study": "원의 접선의 방정식",
+      "hw": "개념원리 ~166",
+      "current": 10,
+      "grade": 5,
+      "completed": 10
     },
     {
       "id": 10,
-      "userId": "배눈송",
-      "num": "4",
-      "date": "6월 30일"
+      "userId": "카리나",
+      "num": "2",
+      "date": "6월 22일",
+      "subject": "공통수학(상)",
+      "study": "점과 직선에 대한 대칭이동",
+      "hw": "개념원리 ~178",
+      "current": 250,
+      "grade": 10,
+      "completed": 2
     },
     {
       "id": 11,
-      "userId": "하눈송",
-      "num": "5",
-      "date": "7월 1일",
-      "subject": "공통수학(하)",
-      "study": "블라",
-      "hw": "블라라랄",
-      "current": 100,
-      "grade": 10,
+      "userId": "카리나",
+      "num": "3",
+      "date": "6월 27일",
+      "subject": "미적분1",
+      "study": "수열의 극한",
+      "hw": "쎈 ~25",
+      "current": 0,
+      "grade": 2,
       "completed": 10
     },
     {
       "id": 12,
-      "userId": "배눈송",
-      "num": "1",
-      "date": "6월 24일",
-      "subject": "미적",
-      "study": "미분",
-      "hw": "쎈 100",
-      "current": 100,
-      "grade": 10,
+      "userId": "카리나",
+      "num": "4",
+      "date": "6월 29일",
+      "subject": "미적분1",
+      "study": "급수",
+      "hw": "쎈 ~52",
+      "current": 32,
+      "grade": 5,
       "completed": 10
     },
     {
       "id": 13,
-      "userId": "강숙명",
-      "num": "2",
-      "date": "7월 3일",
-      "subject": "기하와벡터",
-      "study": "포물선",
-      "hw": "개념원리 ~100",
-      "current": 20,
-      "grade": 2,
-      "completed": 2
+      "userId": "카리나",
+      "num": "5",
+      "date": "7월 4일",
+      "subject": "확률과통계",
+      "study": "순열과 조합",
+      "hw": "블랙라벨 ~15",
+      "current": 10,
+      "grade": 5,
+      "completed": 10
     },
     {
       "id": 14,
-      "userId": "강숙명",
+      "userId": "카리나",
+      "num": "6",
+      "date": "7월 6일",
+      "subject": "확률과통계",
+      "study": "조건부확률",
+      "hw": "블랙라벨 ~33",
+      "current": 10,
+      "grade": 5,
+      "completed": 2
+    },
+    {
+      "id": 15,
+      "userId": "카리나",
+      "num": "7",
+      "date": "7월 11일",
+      "subject": "확률과통계",
+      "study": "이항분포와 정규분포",
+      "hw": "블랙라벨 ~57",
+      "current": 18,
+      "grade": 2,
+      "completed": 5
+    },
+    {
+      "id": 16,
+      "userId": "윈터",
+      "num": "1",
+      "date": "5월 3일",
+      "subject": "공통수학(하)",
+      "study": "집합과 명제",
+      "hw": "고쟁이 ~15",
+      "current": 18,
+      "grade": 10,
+      "completed": 5
+    },
+    {
+      "id": 17,
+      "userId": "윈터",
       "num": "2",
-      "date": "7월 5일",
-      "subject": "기하와벡터",
-      "study": "타원의 방정식",
-      "hw": "개념원리 ~200",
-      "current": 40,
+      "date": "5월 5일",
+      "subject": "공통수학(하)",
+      "study": "함수의 뜻과 그래프",
+      "hw": "고쟁이 ~33",
+      "current": 50,
       "grade": 2,
       "completed": 10
     },
     {
-      "id": 15,
-      "userId": "강숙명",
+      "id": 18,
+      "userId": "윈터",
+      "num": "3",
+      "date": "5월 10일",
+      "subject": "기하",
+      "study": "이차곡선",
+      "hw": "RPM ~23",
+      "current": 18,
+      "grade": 2,
+      "completed": 10
+    },
+    {
+      "id": 19,
+      "userId": "윈터",
+      "num": "4",
+      "date": "5월 12일",
+      "subject": "기하",
+      "study": "벡터의 연산",
+      "hw": "RPM ~35",
+      "current": 18,
+      "grade": 2,
+      "completed": 10
+    },
+    {
+      "id": 20,
+      "userId": "윈터",
+      "num": "5",
+      "date": "5월 17일",
+      "subject": "기하",
+      "study": "평면벡터의 성분과 내적",
+      "hw": "RPM ~41",
+      "current": 18,
+      "grade": 2,
+      "completed": 10
+    },
+    {
+      "id": 21,
+      "userId": "윈터",
       "num": "6",
-      "date": "6월 28일",
-      "subject": "기하와벡터",
-      "study": "ss",
-      "hw": "ss",
-      "current": 55,
-      "grade": 5,
-      "completed": 5
+      "date": "5월 19일",
+      "subject": "기하",
+      "study": "공간도형",
+      "hw": "RPM ~56",
+      "current": 51,
+      "grade": 2,
+      "completed": 10
     }
   ],
   "userone": [
     {
-      "id": 1,
       "username": "김눈송",
-      "userId": "123456",
-      "userPw": "121212"
-    },
-    {
-      "id": 2,
-      "username": "배지윤",
-      "userId": "giyun3632",
-      "userPw": "jiyun9163!"
-    },
-    {
-      "id": 3,
-      "username": "강연우",
-      "userId": "kkkk",
-      "userPw": "kang1234"
-    },
-    {
-      "username": "qq",
-      "userId": "qqq",
-      "userPw": "jiyun9163!",
-      "id": 4
-    },
-    {
-      "username": "",
-      "userId": "giyun3632",
-      "userPw": "jiyun9163!",
-      "id": 5
-    },
-    {
-      "username": "aaaa",
-      "userId": "sssss",
-      "userPw": "aa",
-      "id": 6
-    },
-    {
-      "username": "김블블",
-      "userId": "beulbeul",
-      "userPw": "bb",
-      "role": "1",
-      "id": 7
-    },
-    {
-      "id": 8,
-      "username": "이숙명",
-      "userId": "333333",
-      "userPw": "444444",
-      "tutorId": "beulbeul",
-      "parents": "01012345678"
-    },
-    {
-      "id": 9,
-      "username": "이숙밍",
-      "userId": "kang",
-      "userPw": "44444",
-      "tutorId": "beulbeul",
-      "parents": "01012345698"
-    },
-    {
-      "username": "배지윤",
-      "userId": "kppp",
-      "userPw": "kppp",
-      "role": "1",
-      "id": 10
-    },
-    {
-      "username": "홍길동",
-      "userId": "112233",
-      "userPw": "112233",
-      "id": 11
-    },
-    {
-      "username": "유재석",
-      "userId": "jaeseok",
-      "userPw": "jjss11",
-      "tutorId": "giyun3632",
-      "parents": "01088889999",
-      "id": 12
-    },
-    {
-      "username": "배지윤",
-      "userId": "ggww",
-      "userPw": "ggww",
+      "userId": "noonsong1234",
+      "userPw": "1234",
       "tutorId": "",
       "parents": "",
-      "id": 13
+      "id": 1
     },
     {
-      "username": "블블블",
-      "userId": "bbbb",
-      "userPw": "bbbb",
-      "tutorId": "beulbeul",
-      "parents": "00",
-      "id": 14
+      "username": "카리나",
+      "userId": "karina",
+      "userPw": "karina",
+      "tutorId": "noonsong1234",
+      "parents": "01012345678",
+      "id": 2
     },
     {
-      "username": "강눈송",
-      "userId": "kariel1103",
-      "userPw": "kitty",
-      "tutorId": "",
-      "parents": "",
-      "id": 15
-    },
-    {
-      "username": "강숙명",
-      "userId": "kang1102",
-      "userPw": "kitty",
-      "tutorId": "kariel1103",
-      "parents": "01000000000",
-      "id": 16
-    },
-    {
-      "username": "하눈송",
-      "userId": "haha",
-      "userPw": "kitty",
-      "tutorId": "kariel1103",
-      "parents": "01099992222",
-      "id": 17
-    },
-    {
-      "username": "배눈송",
-      "userId": "baebae",
-      "userPw": "kitty",
-      "tutorId": "kariel1103",
-      "parents": "01088882222",
-      "id": 18
+      "username": "윈터",
+      "userId": "winter",
+      "userPw": "winter",
+      "tutorId": "noonsong1234",
+      "parents": "01087654321",
+      "id": 3
     }
   ],
   "subjects": [
     {
       "id": 1,
-      "userId": "강숙명",
-      "subject": "고등수학(상)",
-      "pages": 400,
-      "current": 100
+      "userId": "카리나",
+      "subject": "공통수학(상)",
+      "pages": 250,
+      "current": 250
     },
     {
       "id": 2,
-      "userId": "강숙명",
-      "subject": "미적분2",
-      "pages": 500,
-      "current": 190
+      "userId": "카리나",
+      "subject": "미적분1",
+      "pages": 280,
+      "current": 32
     },
     {
       "id": 3,
-      "userId": "하눈송",
-      "subject": "미적분1",
-      "pages": 500,
-      "current": 33
+      "userId": "카리나",
+      "subject": "확률과통계",
+      "pages": 220,
+      "current": 18
     },
     {
       "id": 4,
-      "userId": "배눈송",
-      "subject": "확률과 통계",
-      "pages": 300,
-      "current": 200
+      "userId": "윈터",
+      "subject": "공통수학(하)",
+      "pages": 400,
+      "current": 50
     },
     {
       "id": 5,
-      "userId": "하눈송",
-      "subject": "공통수학(하)",
-      "pages": 100,
-      "current": 100
-    },
-    {
-      "id": 6,
-      "userId": "강숙명",
-      "subject": "확률과 통계",
-      "pages": 500
-    },
-    {
-      "id": 7,
-      "userId": "배눈송",
-      "subject": "미적",
-      "pages": 500,
-      "current": 100
-    },
-    {
-      "id": 8,
-      "userId": "강숙명",
-      "subject": "기하와벡터",
-      "pages": 400,
-      "current": 55
+      "userId": "윈터",
+      "subject": "기하",
+      "pages": 360,
+      "current": 51
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
