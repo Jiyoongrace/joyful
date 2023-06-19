@@ -71,6 +71,8 @@ const ClassPage = () => {
 
   const handleUpdate = () => {
     const { subject, study, hw, current, grade, completed } = update;
+
+
     axios
       .put(`http://localhost:3001/lessons/${id}`, {
         ...post,
@@ -113,8 +115,25 @@ const ClassPage = () => {
         </div>
           <div>
             <div>
+            <p style={{ float: 'left', textAlign: 'left', marginLeft: '25px' }}>
+                <span
+                  style={{
+                        fontSize: '27px',
+                        fontFamily: 'Pretendard',
+                        color: '#7789FF',
+                        fontWeight: '800',
+                      }}>{selectedStudent}</span> <span
+                      style={{
+                            fontSize: '20px',
+                            fontFamily: 'Pretendard',
+                            color: '#7B7B7B',
+                            fontWeight: '700',
+                          }}>학생의 수업일지</span></p>
+
               <div id="pp">
+                
               <div id="ff">
+              
                       <span id="ii">●</span> {post.date} 수업
                     </div>
                     <div id="ggc">

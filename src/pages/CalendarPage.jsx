@@ -64,7 +64,6 @@ const CalendarPage = () => {
             <Navbar isOpen={isNavBarOpen} image={JOY2}></Navbar>
           </div>
           <br />
-          <br />
           <div>김눈송 선생님의 월간 과외 캘린더</div>
           <div style={{ padding: 20 }}>
             <Calendar
@@ -75,13 +74,13 @@ const CalendarPage = () => {
             />
           </div>
           <div id="fff">
-            <span id="sss">+</span>&nbsp;
+            &nbsp;&nbsp;&nbsp;
             <select
               id="selectStudent"
               value={form.userId}
               onChange={(e) => setForm({ ...form, userId: e.target.value })}
             >
-              <option value="전체학생">학생선택</option>
+              <option value="전체학생">학생 선택</option>
               {tutorUsernames.map((username) => (
                 <option key={username} value={username}>
                   {username}

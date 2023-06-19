@@ -92,7 +92,7 @@ const CardPage = () => {
               value={form.userId}
               onChange={(e) => setForm({ ...form, userId: e.target.value })}
             >
-              <option value="all">전체학생</option>
+              <option value="all">전체 학생</option>
               {tutorUsernames.map((username) => (
                 <option key={username} value={username}>
                   {username}
@@ -112,7 +112,7 @@ const CardPage = () => {
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
               >
-                <option value="all">전체</option>
+                <option value="all">전체 과목</option>
                 {subjects
                   .filter((subject) => subject.userId === form.userId)
                   .map((subject) => (

@@ -8,9 +8,9 @@
       "subject": "고등수학(상)",
       "study": "원의 방정식",
       "hw": "쎈 ~100",
-      "current": "10",
-      "grade": 5,
-      "completed": 5
+      "current": 100,
+      "grade": 10,
+      "completed": 10
     },
     {
       "id": 2,
@@ -77,12 +77,12 @@
       "userId": "강숙명",
       "num": "3",
       "date": "6월 29일",
-      "subject": "확률과 통계",
-      "study": "ㅇㅇ",
-      "hw": "ㅇㅇㅇ",
-      "current": 100,
-      "grade": 10,
-      "completed": 5
+      "subject": "기하와벡터",
+      "study": "벡터의 성질",
+      "hw": "개념원리 ~50",
+      "current": 150,
+      "grade": 2,
+      "completed": 10
     },
     {
       "id": 8,
@@ -125,6 +125,42 @@
       "current": 100,
       "grade": 10,
       "completed": 10
+    },
+    {
+      "id": 13,
+      "userId": "강숙명",
+      "num": "2",
+      "date": "7월 3일",
+      "subject": "기하와벡터",
+      "study": "포물선",
+      "hw": "개념원리 ~100",
+      "current": 20,
+      "grade": 2,
+      "completed": 2
+    },
+    {
+      "id": 14,
+      "userId": "강숙명",
+      "num": "2",
+      "date": "7월 5일",
+      "subject": "기하와벡터",
+      "study": "타원의 방정식",
+      "hw": "개념원리 ~200",
+      "current": 40,
+      "grade": 2,
+      "completed": 10
+    },
+    {
+      "id": 15,
+      "userId": "강숙명",
+      "num": "6",
+      "date": "6월 28일",
+      "subject": "기하와벡터",
+      "study": "ss",
+      "hw": "ss",
+      "current": 55,
+      "grade": 5,
+      "completed": 5
     }
   ],
   "userone": [
@@ -263,7 +299,7 @@
       "userId": "강숙명",
       "subject": "고등수학(상)",
       "pages": 400,
-      "current": 55
+      "current": 100
     },
     {
       "id": 2,
@@ -305,6 +341,13 @@
       "subject": "미적",
       "pages": 500,
       "current": 100
+    },
+    {
+      "id": 8,
+      "userId": "강숙명",
+      "subject": "기하와벡터",
+      "pages": 400,
+      "current": 55
     }
   ],
   "profile": {

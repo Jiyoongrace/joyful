@@ -216,8 +216,8 @@
 
 
 #ggg {
-    margin-top: 15px;
-    margin-right: 100px;
+    margin-top: 10px;
+    margin-right: 110px;
     color: #848484;
     font-weight: 600;
     font-size: 19px;
@@ -229,7 +229,7 @@
     display:inline-flex;
     margin-top: 15px;
     padding: 5px;
-    margin-right: 90px;
+    margin-bottom: 20px;
 }
 
 #bbbb {
@@ -240,7 +240,7 @@
 
     color: #784210;
 
-    width: 80px;
+    width: 130px;
     height: 20px;
     text-align: left;
 
