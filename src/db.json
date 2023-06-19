@@ -32,9 +32,9 @@
       "subject": "미적분1",
       "study": "등차수열",
       "hw": "쎈 ~70",
-      "current": 75,
+      "current": 21,
       "grade": 2,
-      "completed": 10
+      "completed": 2
     },
     {
       "id": 4,
@@ -44,21 +44,21 @@
       "subject": "확률과 통계",
       "study": "조건부확률",
       "hw": "100",
-      "current": "200",
-      "grade": null,
-      "completed": null
+      "current": 100,
+      "grade": 10,
+      "completed": 5
     },
     {
       "id": 5,
       "userId": "배눈송",
       "num": "2",
       "date": "6월 26일",
-      "subject": "",
-      "study": "ㄴㄴ",
-      "hw": "ㄴㄴ",
-      "current": "3",
-      "grade": null,
-      "completed": null
+      "subject": "확률과 통계",
+      "study": "조합",
+      "hw": "23",
+      "current": 55,
+      "grade": 2,
+      "completed": 2
     },
     {
       "id": 6,
@@ -263,7 +263,7 @@
       "userId": "강숙명",
       "subject": "고등수학(상)",
       "pages": 400,
-      "current": 200
+      "current": 55
     },
     {
       "id": 2,
@@ -277,7 +277,7 @@
       "userId": "하눈송",
       "subject": "미적분1",
       "pages": 500,
-      "current": 200
+      "current": 33
     },
     {
       "id": 4,
