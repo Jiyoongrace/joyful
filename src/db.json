@@ -8,7 +8,7 @@
       "subject": "고등수학(상)",
       "study": "원의 방정식",
       "hw": "쎈 ~100",
-      "current": "300",
+      "current": "10",
       "grade": 5,
       "completed": 5
     },
@@ -20,7 +20,7 @@
       "subject": "미적분2",
       "study": "미분하기",
       "hw": "쎈 ~50",
-      "current": 49,
+      "current": 300,
       "grade": 5,
       "completed": 10
     },
@@ -44,9 +44,9 @@
       "subject": "확률과 통계",
       "study": "조건부확률",
       "hw": "100",
-      "current": 100,
-      "grade": 10,
-      "completed": 5
+      "current": "200",
+      "grade": null,
+      "completed": null
     },
     {
       "id": 5,
@@ -64,17 +64,23 @@
       "id": 6,
       "userId": "하눈송",
       "num": "2",
-      "date": "6월 27일"
+      "date": "6월 27일",
+      "subject": "공통수학(하)",
+      "study": "aff",
+      "hw": "ddd",
+      "current": 100,
+      "grade": 2,
+      "completed": 2
     },
     {
       "id": 7,
       "userId": "강숙명",
       "num": "3",
       "date": "6월 29일",
-      "subject": "미적분2",
+      "subject": "확률과 통계",
       "study": "ㅇㅇ",
       "hw": "ㅇㅇㅇ",
-      "current": 190,
+      "current": 100,
       "grade": 10,
       "completed": 5
     },
@@ -91,18 +97,6 @@
       "completed": 5
     },
     {
-      "id": 9,
-      "userId": "강숙명",
-      "num": "4",
-      "date": "6월 27일",
-      "subject": "공통수학(하)",
-      "study": "33",
-      "hw": "222",
-      "current": "22",
-      "grade": 10,
-      "completed": 10
-    },
-    {
       "id": 10,
       "userId": "배눈송",
       "num": "4",
@@ -110,15 +104,27 @@
     },
     {
       "id": 11,
-      "userId": "강숙명",
+      "userId": "하눈송",
       "num": "5",
-      "date": "6월 30일"
+      "date": "7월 1일",
+      "subject": "공통수학(하)",
+      "study": "블라",
+      "hw": "블라라랄",
+      "current": 50,
+      "grade": 10,
+      "completed": 10
     },
     {
-      "id": 9,
-      "userId": "하눈송",
-      "num": "2",
-      "date": "6월 23일"
+      "id": 12,
+      "userId": "배눈송",
+      "num": "1",
+      "date": "6월 24일",
+      "subject": "미적",
+      "study": "미분",
+      "hw": "쎈 100",
+      "current": 100,
+      "grade": 10,
+      "completed": 10
     }
   ],
   "userone": [
@@ -278,13 +284,27 @@
       "userId": "배눈송",
       "subject": "확률과 통계",
       "pages": 300,
-      "current": 100
+      "current": 200
     },
     {
       "id": 5,
       "userId": "하눈송",
       "subject": "공통수학(하)",
-      "pages": 100
+      "pages": 100,
+      "current": 50
+    },
+    {
+      "id": 6,
+      "userId": "강숙명",
+      "subject": "확률과 통계",
+      "pages": 500
+    },
+    {
+      "id": 7,
+      "userId": "배눈송",
+      "subject": "미적",
+      "pages": 500,
+      "current": 100
     }
   ],
   "profile": {
