@@ -142,7 +142,7 @@ const FeedbackPage = () => {
 
               <div id="crcr">
                 <label htmlFor="study">
-                  <span id="fifi">●&nbsp;</span>8회차 총 진도
+                  <span id="fifi">●&nbsp;</span>현재까지의 총 진도
                 </label>
                 <textarea
                   type="text"
@@ -178,7 +178,7 @@ const FeedbackPage = () => {
                     fontFamily: 'Pretendard',
                     color: '#784210',
                     fontWeight: '600',
-                    height: '82px',
+                    height: '110px',
                   }}
                   value={studyList.map((item) => `🔎 ${item}`).join('\n')}
                 />
@@ -220,6 +220,7 @@ const FeedbackPage = () => {
                     lineHeight: '40px'
                   }}> 공감을 눌러주세요!
                 {/* Emoji Components */}
+
                 <img
                   src={Good}
                   alt="Joy Emoji"

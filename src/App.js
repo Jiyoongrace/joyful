@@ -6,6 +6,7 @@ import SignupPageA from './pages/SignupPageA';
 import SignupPageB from './pages/SignupPageB';
 import LoginPage from './pages/LoginPage';
 import MyPage from './pages/MyPage';
+import MyPagee from './pages/MyPagee';
 import CalendarPage from './pages/CalendarPage';
 import CardPage from './pages/CardPage';
 import SubjectPage from './pages/SubjectPage';
@@ -27,6 +28,7 @@ function App() {
 					<Route path="/rolepage" element={<RolePage />}></Route>
 					<Route path="/loginpage" element={<LoginPage />}></Route>
 					<Route path="/mypage" element={<MyPage />}></Route>
+					<Route path="/mypagee" element={<MyPagee />}></Route>
 					<Route path="/calendarpage" element={<CalendarPage />}></Route>
 					<Route path="/cardpage" element={<CardPage />}></Route>
 					<Route path="/subjectpage" element={<SubjectPage />}></Route>
